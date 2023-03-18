@@ -1,0 +1,33 @@
+* {
+    background-color: grey;
+}
+
+@font-face {
+    font-family: saucer;
+    /*a name to be used later*/
+    src: url('../fonts/saucerbb-webfont.woff');
+    /*URL to font*/
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    font-family: saucer;
+    font-size: 30px;
+}
+
+#canvas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.pixel {
+    min-width: none;
+    background-color: antiquewhite;
+    flex: 0;
+    margin: 2px;
+    width: 50px;
+    aspect-ratio: 1;
+}
