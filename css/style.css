@@ -2,6 +2,8 @@
     background-color: rgb(197, 197, 197);
 }
 
+
+
 @font-face {
     font-family: saucer;
     /*a name to be used later*/
@@ -58,14 +60,12 @@
 #canvas,
 #grid {
     display: flex;
+
 }
 
 
 .pixel {
-    min-width: none;
     background-color: white;
-    flex: 0;
-    margin: 0px;
     width: 30px;
     aspect-ratio: 1;
 }

@@ -17,6 +17,7 @@ function createCanvas(num) {
         for (let i = 0; i < num; i++) {
             let subDiv = document.createElement('div');
             subDiv.setAttribute('class', 'pixel')
+            subDiv.style.width = `${700 / num}px`
             div.appendChild(subDiv)
         };
     };
