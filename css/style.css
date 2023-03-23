@@ -63,9 +63,9 @@
 
 .pixel {
     min-width: none;
-    background-color: antiquewhite;
+    background-color: white;
     flex: 0;
-    margin: 2px;
+    margin: 0px;
     width: 30px;
     aspect-ratio: 1;
 }

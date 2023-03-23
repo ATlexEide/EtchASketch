@@ -1,3 +1,4 @@
+
 createCanvas(userInput = 16)
 // Creates the canvas
 function createCanvas(num) {
@@ -19,7 +20,7 @@ function createCanvas(num) {
             div.appendChild(subDiv)
         };
     };
-
+    getInputOnClick();
 }
 // Removes the canvas
 function removeCanvas() {
@@ -39,10 +40,40 @@ function createNewCanvas(userInput) {
 function getInputOnClick() {
     const inputField = document.getElementById('userInput');
     const btn = document.getElementById('submit-button')
-    btn.addEventListener('click', (event) => { createNewCanvas(inputField.value); console.log(event) })
-    // btn.addEventListener('click', () => { userInput = document.getElementById('input'); input = inputField.value; console.log(userInput) })
+    btn.addEventListener('click', (event) => { createNewCanvas(inputField.value); })
 }
-createNewCanvas(userInput)
-getInputOnClick()
-// const btn = document.getElementById('submit-button')
-// btn.addEventListener('click',)
+
+
+// Color select
+let color;
+const btnApply = document.getElementById('apply')
+btnApply.addEventListener('click', () => { color = document.getElementById('color-input').value; draw(); console.log('Yippee') })
+
+// Function to make the divs change color
+function draw() {
+    // Detects if mouse button is pressed
+    let mouseDown = 0;
+    document.body.onmousedown = function () {
+        mouseDown = 1;
+        console.log(mouseDown)
+    }
+    document.body.onmouseup = function () {
+        mouseDown = 0;
+        console.log(mouseDown)
+    }
+    const pixels = document.querySelectorAll('.pixel');
+    [...pixels].forEach(item => {
+        // Detects if mouse is hovered over the div
+        item.addEventListener('mouseover', () => {
+            // If the div is hovered over and mouse button is pressed, it will change background color of the div
+            if (mouseDown) {
+                item.style.backgroundColor = `${color}`;
+            }
+        })
+        item.addEventListener('click', () => { item.style.backgroundColor = `${color}`; })
+        // Clear canvas
+        const btnClear = document.getElementById('clear');
+        btnClear.addEventListener('click', () => { item.style.backgroundColor = 'white' })
+    });
+}
+// item.style.backgroundColor = `${color}`;
