@@ -15,14 +15,12 @@
         <div id="settings">
             <div id="settings-grid-size">
                 <h2>Grid size</h2>
-                <input id="userInput" type="number" placeholder="Grid Size"> <br>
-                <button id="submit-button"> Submit </button>
+                <input id="userInput" type="number" placeholder="Grid Size" min="1" max="100">
             </div>
             <div id="settings-color">
                 <h2>Color</h2>
-                <input id="color-input" type="color">
-                <button id="apply"> Apply </button>
-                <button id="clear"> clear </button>
+                <input id="color-input" type="color" value="#ffffff">
+                <button id="clear"> Clear canvas </button>
             </div>
         </div>
         <div id="canvas"></div>

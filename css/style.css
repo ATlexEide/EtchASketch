@@ -38,7 +38,6 @@
 }
 
 #settings {
-    border: solid yellow;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +49,6 @@
 #settings-color {
     display: flex;
     flex-flow: column;
-    border: solid blue;
 }
 
 #settings-grid-size>h2 {

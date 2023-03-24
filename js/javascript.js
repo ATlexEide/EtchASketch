@@ -1,5 +1,5 @@
 
-createCanvas(userInput = 16)
+createCanvas(userInput = 16);
 // Creates the canvas
 function createCanvas(num) {
     // Selects the div with id "canvas" and sets it as "main"
@@ -41,14 +41,20 @@ function createNewCanvas(userInput) {
 function getInputOnClick() {
     const inputField = document.getElementById('userInput');
     const btn = document.getElementById('submit-button')
-    btn.addEventListener('click', (event) => { createNewCanvas(inputField.value); })
+    inputField.addEventListener('change', (event) => {
+        if (inputField.value <= 100 && inputField.value > 0) {
+            createNewCanvas(inputField.value);
+        }
+        else { alert("canvas size can only be 1 - 100") }
+    }
+    )
 }
 
 
 // Color select
-let color;
-const btnApply = document.getElementById('apply')
-btnApply.addEventListener('click', () => { color = document.getElementById('color-input').value; draw(); console.log('Yippee') })
+let color = 'black';
+const input = document.getElementById('color-input')
+input.addEventListener('change', () => { color = document.getElementById('color-input').value; draw(); console.log('Yippee') })
 
 // Function to make the divs change color
 function draw() {
