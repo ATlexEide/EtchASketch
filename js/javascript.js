@@ -22,6 +22,7 @@ function createCanvas(num) {
         };
     };
     getInputOnClick();
+    draw()
 }
 // Removes the canvas
 function removeCanvas() {
@@ -54,7 +55,7 @@ function getInputOnClick() {
 // Color select
 let color = 'black';
 const input = document.getElementById('color-input')
-input.addEventListener('change', () => { color = document.getElementById('color-input').value; draw(); console.log('Yippee') })
+input.addEventListener('change', () => { color = document.getElementById('color-input').value; console.log('Yippee') })
 
 // Function to make the divs change color
 function draw() {
@@ -83,4 +84,3 @@ function draw() {
         btnClear.addEventListener('click', () => { item.style.backgroundColor = 'white' })
     });
 }
-// item.style.backgroundColor = `${color}`;
